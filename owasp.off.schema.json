@@ -1,0 +1,25 @@
+{
+  "id": "./owasp.off.schema.json",
+  "title": "Finding",
+  "description": "OWASP Security Finding",
+  "type": "object",
+  "properties": {
+    "name":         { "type": "string", "maxLength": 128 },
+    "description":  { "type": "string", "maxLength": 2048 },
+    "severity":     { "enum": ["low", "medium", "high"] },
+    "confidence":   { "enum": ["low", "medium", "high"] },
+    "fingerprint":  { "type": "string", "maxLength": 256 },
+    "timestamp":    { "type": "string" },
+    "location":     { "type": "string", "maxLenth": 256 },
+    "source":       { "type": "string", "maxLenth": 128 },
+    "references": {
+      "type": "array",
+      "maxItems": 15,
+      "items": {
+        "type": "string", "format": "uri"
+      }
+    }
+  },
+  "required": ["name", "description", "severity", "confidence", "timestamp", "location", "source"],
+  "additionalProperties": false
+}

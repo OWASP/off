@@ -1,0 +1,14 @@
+{
+	"name": "Finding 1",
+	"description": "Detailed description",
+	"severity": "low",
+	"confidence": "medium", 
+	"fingerprint": "ABC", 
+	"timestamp": "2017-09-14T16:09:39.896Z",
+	"source": "brakeman",
+	"location": "src/vendor/lib/VulnerableController.rb: Line 234",
+	"references": [
+		"https://owasp.org/1",
+		"https://owasp.org/2"
+	]
+}

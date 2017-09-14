@@ -1,0 +1,8 @@
+{
+	"name": "Finding 1",
+	"description": "Detailed description",
+	"severity": "low",
+	"confidence": "high", 
+	"fingerprint": "ABC",
+	"xyz": "def"
+}
