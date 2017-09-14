@@ -25,6 +25,8 @@ We can use AJV to validate from the command line.
 `npm install ajv-cli
 `ajv validate -s owasp.off.schema.json -d example.finding.json
 
+See:  http://epoberezkin.github.io/ajv/#command-line-interface
+
 # Credits
 
 The idea for OFF came from a Dallas OWASP Meeting where a participant indicated that the Indianapolis OWASP
