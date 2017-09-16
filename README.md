@@ -33,7 +33,7 @@ See:  http://epoberezkin.github.io/ajv/#command-line-interface
 # Credits
 
 The idea for OFF came from a Dallas OWASP Meeting where a participant indicated that the Indianapolis OWASP
-Chapter had conceived of this idea and many exhortations to advance this as a standard.
+Chapter had conceived of this idea and made many exhortations to advance this as a standard.
 
 # References
 
