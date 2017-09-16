@@ -16,15 +16,18 @@ The OFF project initially defineds a JSON Schema for findings.  Simply produce J
 
 # Setup for Testing
 
-`npm install ajv
-`node simpletest.js
+```
+npm install ajv
+node simpletest.js
+```
 
 ## Command Line
 
 We can use AJV to validate from the command line.
-`npm install ajv-cli
-`ajv validate -s owasp.off.schema.json -d example.finding.json
-
+```
+npm install ajv-cli
+ajv validate -s owasp.off.schema.json -d example.finding.json
+```
 See:  http://epoberezkin.github.io/ajv/#command-line-interface
 
 # Credits
@@ -34,12 +37,11 @@ Chapter had conceived of this idea and many exhortations to advance this as a st
 
 # References
 
-The standard: 
-http://json-schema.org/latest/json-schema-validation.html
+The standard:  http://json-schema.org/latest/json-schema-validation.html
 
 Implementations: 
-https://www.npmjs.com/package/json-validation
-https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-2--cms-25640
+* https://www.npmjs.com/package/json-validation
+* https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-2--cms-25640
 
 
 
