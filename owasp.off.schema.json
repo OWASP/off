@@ -10,7 +10,7 @@
     "severity":     { "enum": ["low", "medium", "high"] },
     "confidence":   { "enum": ["low", "medium", "high"] },
     "fingerprint":  { "type": "string", "maxLength": 256 },
-    "timestamp":    { "type": "string" },
+    "timestamp":    { "type": "string", "format": "date-time" },
     "location":     { "type": "string", "maxLenth": 256 },
     "source":       { "type": "string", "maxLenth": 128 },
     "cvss":         { "type": "number", "mininum": 0, "maximum": 10 },
