@@ -1,8 +1,20 @@
 {
-	"name": "Finding 1",
-	"description": "Detailed description",
-	"severity": "low",
-	"confidence": "high", 
-	"fingerprint": "ABC",
-	"xyz": "def"
+	"name": "Remote Code Execution",
+	"description": "Remote Code Execution",
+	"detail": "Rails 3.2.12 with globbing routes is vulnerable to directory traversal and remote code execution. Patch or upgrade to 3.2.18 http://brakemanscanner.org/docs/warning_types/remote_code_execution/",
+	"severity": "medium",
+	"confidence": "medium", 
+	"fingerprint": "2153b4047940d99e694a7e1b7c51b3eff1ca8dee4b796cab17ad1af0763248a2", 
+	"timestamp": "2017-09-14T16:09:39.896Z",
+	"source": "brakeman",
+	"location": "config/routes.rb",
+	"cvss": "a",
+	"references": [
+		"https://www.owasp.org/index.php/Path_Traversal",
+		"https://www.owasp.org/index.php/Command_Injection"
+	],
+	"cwes": [
+		"https://cwe.mitre.org/data/definitions/23.html",
+		"https://cwe.mitre.org/data/definitions/78.html"
+	]
 }

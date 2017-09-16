@@ -5,13 +5,22 @@
   "type": "object",
   "properties": {
     "name":         { "type": "string", "maxLength": 128 },
-    "description":  { "type": "string", "maxLength": 2048 },
+    "description":  { "type": "string", "maxLength": 256 },
+    "detail":       { "type": "string", "maxLength": 2048 },
     "severity":     { "enum": ["low", "medium", "high"] },
     "confidence":   { "enum": ["low", "medium", "high"] },
     "fingerprint":  { "type": "string", "maxLength": 256 },
     "timestamp":    { "type": "string" },
     "location":     { "type": "string", "maxLenth": 256 },
     "source":       { "type": "string", "maxLenth": 128 },
+    "cvss":         { "type": "number", "mininum": 0, "maximum": 10 },
+    "cwes": {
+      "type": "array",
+      "maxItems": 15,
+      "items": {
+        "type": "string", "format": "uri"
+      }
+    },
     "references": {
       "type": "array",
       "maxItems": 15,
