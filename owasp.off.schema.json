@@ -11,9 +11,9 @@
     "confidence":   { "enum": ["low", "medium", "high"] },
     "fingerprint":  { "type": "string", "maxLength": 256 },
     "timestamp":    { "type": "string", "format": "date-time" },
-    "location":     { "type": "string", "maxLenth": 256 },
-    "source":       { "type": "string", "maxLenth": 128 },
-    "cvss":         { "type": "number", "mininum": 0, "maximum": 10 },
+    "location":     { "type": "string", "maxLength": 256 },
+    "source":       { "type": "string", "maxLength": 128 },
+    "cvss":         { "type": "number", "minimum": 0, "maximum": 10 },
     "cwes": {
       "type": "array",
       "maxItems": 15,
