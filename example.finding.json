@@ -16,5 +16,9 @@
 	"cwes": [
 		"https://cwe.mitre.org/data/definitions/23.html",
 		"https://cwe.mitre.org/data/definitions/78.html"
+	],
+	"tags": [
+		"java",
+		"ruby"
 	]
 }

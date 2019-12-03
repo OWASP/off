@@ -27,7 +27,15 @@
       "items": {
         "type": "string", "format": "uri"
       }
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 15,
+      "items": {
+        "type": "string"
+      }
     }
+
   },
   "required": ["name", "description", "severity", "confidence", "timestamp", "location", "source"],
   "additionalProperties": false
