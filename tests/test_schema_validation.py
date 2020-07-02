@@ -54,7 +54,7 @@ def test_extra_data_finding():
     data = _load_finding("tests/extradata.finding.json")
     schema = _load_json_schema(schema_file)
     result = _validate(data,schema)
-    assert result == False, "The schema should validate the example file"
+    assert result == False, "The schema should validate the example file even though it has extra information"
 
 def test_incomplete_finding():
     data = _load_finding("tests/incomplete.finding.json")
