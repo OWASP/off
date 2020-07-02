@@ -16,12 +16,31 @@ The OFF project initially defines a JSON Schema for findings.  Simply produce JS
 
 # Setup for Testing
 
+## Python
+
+Set up the environment in python.
+
+```sh
+pipenv --python 3
+git clone https://github.com/owasp/off.git
+cd off
+pipenv install
+pipenv shell
+pytest
+```
+
+See the `tests/test_schema_validation.py` for an example of how to use the schema in python.
+
+## Node.js
+
+Set up the environment in JavaScript.
+
 ```
 npm install ajv
 node simpletest.js
 ```
 
-## Command Line
+### Command Line
 
 We can use AJV to validate from the command line.
 ```
