@@ -9,6 +9,7 @@
     "detail":       { "type": "string", "maxLength": 2048 },
     "severity":     { "enum": ["low", "medium", "high"] },
     "confidence":   { "enum": ["low", "medium", "high"] },
+    "priority":     { "enum": ["low", "medium", "high"] },
     "fingerprint":  { "type": "string", "maxLength": 256 },
     "timestamp":    { "type": "string", "format": "date-time" },
     "location":     { "type": "string", "maxLength": 256 },
