@@ -14,6 +14,8 @@
     "location":     { "type": "string", "maxLength": 256 },
     "source":       { "type": "string", "maxLength": 128 },
     "cvss":         { "type": "number", "minimum": 0, "maximum": 10 },
+    "cvss3score":   { "type": "number", "minimum": 0, "maximum": 10 },
+    "cvss3vector":  { "type": "string", "maxLength": 128 },
     "cwes": {
       "type": "array",
       "maxItems": 15,
