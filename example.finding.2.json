@@ -1,0 +1,28 @@
+{
+    "name": "SSH Protocol Version 1 Supported",
+    "description": "SSH1 protocol was deprecated due to multiple vulnerabilities and design flaws.\nAmong multiple vulnerabilities that exist in SSH protocol Version 1 are:\n<UL>\n<LI>a CRC32 compensation attack detector vulnerability (buffer overflow)\n<LI>an unauthorized sessi",
+    "detail": "SSH1 supported\tyes\nSupported authentications for SSH1\tRSA,password\nSupported ciphers for SSH1\t3des,blowfish",
+    "severity": 4,
+    "confidence": "high",
+    "timestamp": "2020-07-10T07:28:10Z",
+    "location": {
+      "hostname": "demo03.s02.sjc01.qualys.com",
+      "ipv4": "64.41.200.233",
+      "port": 22,
+      "protocol": "tcp"
+    },
+    "source": "QUALYS",
+    "tags": [
+      "Linux 2.4-2.6",
+      "Embedded Device",
+      "F5 Networks Big-IP",
+      "Integrated Dell Remote Access Controller",
+      "Linux 2.4-2.6",
+      "Embedded De..."
+    ],
+    "references": [
+      {
+        "QID": "38304"
+      }
+    ]
+  }

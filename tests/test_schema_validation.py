@@ -44,6 +44,12 @@ def test_example_finding():
     result = _validate(data,schema)
     assert result == True, "The schema should validate the example file"
 
+def test_example_finding2():
+    data = _load_finding("example.finding.2.json")
+    schema = _load_json_schema(schema_file)
+    result = _validate(data,schema)
+    assert result == True, "The schema should validate the second example file"
+
 def test_bad_format_finding():
     data = _load_finding("tests/badformat.finding.json")
     schema = _load_json_schema(schema_file)

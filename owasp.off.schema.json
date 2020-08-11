@@ -1,45 +1,201 @@
 {
-  "id": "./owasp.off.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/OWASP/off/blob/trunk/owasp.off.schema.json",
   "title": "Finding",
   "description": "OWASP Security Finding",
   "type": "object",
   "properties": {
-    "name":         { "type": "string", "maxLength": 128 },
-    "description":  { "type": "string", "maxLength": 256 },
-    "detail":       { "type": "string", "maxLength": 2048 },
-    "severity":     { "enum": ["low", "medium", "high"] },
-    "confidence":   { "enum": ["low", "medium", "high"] },
-    "priority":     { "enum": ["low", "medium", "high"] },
-    "fingerprint":  { "type": "string", "maxLength": 256 },
-    "timestamp":    { "type": "string", "format": "date-time" },
-    "location":     { "type": "string", "maxLength": 256 },
-    "source":       { "type": "string", "maxLength": 128 },
-    "cvss":         { "type": "number", "minimum": 0, "maximum": 10 },
-    "cvss3score":   { "type": "number", "minimum": 0, "maximum": 10 },
-    "cvss3vector":  { "type": "string", "maxLength": 128 },
+    "name": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "detail": {
+      "type": "string"
+    },
+    "severity": {
+      "oneOf": [
+        {
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "fingerprint": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "location": {
+      "oneOf": [
+        {
+          "type": "string",
+          "maxLength": 256
+        },
+        {
+          "$ref": "#/definitions/host"
+        }
+      ]
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "cvss": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        {
+          "$ref": "#/definitions/cvss"
+        }
+      ]
+    },
     "cwes": {
       "type": "array",
       "maxItems": 15,
       "items": {
-        "type": "string", "format": "uri"
+        "type": "string",
+        "format": "uri"
       }
     },
     "references": {
       "type": "array",
-      "maxItems": 15,
+      "maxItems": 100,
       "items": {
-        "type": "string", "format": "uri"
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "type": "object",
+            "additionalProperties": true
+          }
+        ]
       }
     },
     "tags": {
       "type": "array",
-      "maxItems": 15,
+      "maxItems": 100,
       "items": {
-        "type": "string"
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "additionalProperties": true
+          }
+        ]
       }
     }
-
   },
-  "required": ["name", "description", "severity", "confidence", "timestamp", "location", "source"],
+  "definitions": {
+    "host": {
+      "type": "object",
+      "properties": {
+        "hostname": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "ipv4": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "ipv6": {
+          "type": "string",
+          "format": "ipv6"
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "protocol": {
+          "type": "string",
+          "maxLength": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "coderef": {
+      "type": "object",
+      "properties": {
+        "modulename": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "linenum": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cvss": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number",
+          "minimum": 2
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "vector": {
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "severity",
+    "confidence",
+    "timestamp",
+    "location",
+    "source"
+  ],
   "additionalProperties": false
 }
