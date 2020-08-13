@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/OWASP/off/blob/trunk/owasp.off.schema.json",
   "title": "Finding",
   "description": "OWASP Security Finding",
@@ -17,7 +17,7 @@
       "type": "string"
     },
     "severity": {
-      "oneOf": [
+      "anyOf": [
         {
           "enum": [
             1,
@@ -59,7 +59,7 @@
       "format": "date-time"
     },
     "location": {
-      "oneOf": [
+      "anyOf": [
         {
           "type": "string",
           "maxLength": 256
@@ -74,7 +74,7 @@
       "maxLength": 128
     },
     "cvss": {
-      "oneOf": [
+      "anyOf": [
         {
           "type": "number",
           "minimum": 0,
@@ -97,7 +97,7 @@
       "type": "array",
       "maxItems": 100,
       "items": {
-        "oneOf": [
+        "anyOf": [
           {
             "type": "string",
             "format": "uri"
@@ -113,7 +113,7 @@
       "type": "array",
       "maxItems": 100,
       "items": {
-        "oneOf": [
+        "anyOf": [
           {
             "type": "string"
           },
