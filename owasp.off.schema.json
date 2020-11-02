@@ -50,6 +50,14 @@
         "high"
       ]
     },
+    "status": {
+      "enum": [
+        "new",
+        "open",
+        "closed",
+        "re-opened"
+      ]
+    },
     "fingerprint": {
       "type": "string",
       "maxLength": 256
@@ -70,8 +78,15 @@
       ]
     },
     "source": {
-      "type": "string",
-      "maxLength": 128
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 128
+        },
+        {
+          "$ref": "#/definitions/source"
+        }
+      ]
     },
     "cvss": {
       "anyOf": [
@@ -181,6 +196,24 @@
           "maximum": 10
         },
         "vector": {
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "testType": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "testProvider": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "testRef": {
           "type": "string",
           "maxLength": 128
         }

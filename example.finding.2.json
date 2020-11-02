@@ -4,6 +4,7 @@
     "detail": "SSH1 supported\tyes\nSupported authentications for SSH1\tRSA,password\nSupported ciphers for SSH1\t3des,blowfish",
     "severity": 4,
     "confidence": "high",
+    "status": "new",
     "timestamp": "2020-07-10T07:28:10Z",
     "location": {
       "hostname": "demo03.s02.sjc01.qualys.com",
@@ -11,7 +12,10 @@
       "port": 22,
       "protocol": "tcp"
     },
-    "source": "QUALYS",
+    "source": {
+      "testType": "vulnscan",
+      "testProvider": "Qualys"
+    },
     "tags": [
       "Linux 2.4-2.6",
       "Embedded Device",
